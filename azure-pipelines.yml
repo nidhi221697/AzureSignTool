@@ -39,3 +39,7 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: CmdLine@2
+  inputs:
+    script: AzureSignTool sign -kvu "https://ssl-com-poc.vault.azure.net/" -kvi "$(66e7b3a6-7a27-4914-99d5-a6db17000a81)" -kvs "$(Sxd8Q~Vj5LXjFBCxhTmUQn9xKZOvO9mX6d~_Na_D)" -kvc test-certificate1 -tr "http://ts.ssl.com" -td sha256 "FILE-TO-SIGN"
+  displayName: Sign Code
